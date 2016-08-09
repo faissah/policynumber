@@ -1,0 +1,25 @@
+package org.jahia.modules.policynumber.rules
+
+// list any import classes here.
+import org.jahia.services.content.rules.*
+import org.jahia.services.content.JCRContentUtils
+import org.slf4j.Logger
+import org.jahia.modules.policynumber.rules.PolicyService
+
+expander rules.dsl
+
+// declare any global variables here
+global User user
+global Service service
+global Logger logger
+global JCRContentUtils jcrUtils
+global PolicyService policyService
+
+rule "Generate policy number"
+  when
+    Not in operation import
+    A new node is created
+        - the node has the type jpnt:insuranceContract
+  then
+    > policyService.setPolicyNumber(node);
+end

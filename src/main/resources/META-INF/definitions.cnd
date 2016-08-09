@@ -1,0 +1,8 @@
+<jpnt = 'http://www.policy.org/jahia/nt/1.0'>
+<jpmix = 'http://www.policy.org/jahia/mix/1.0'>
+
+
+[jpnt:insuranceContract] > jnt:content, jmix:socialComponent, mix:title
+ - policyNumber (string) protected
+ - firstName (string)
+ - lastName (string)
